@@ -32,7 +32,7 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'system',
     fallback: 'dark',
-    storageKey: 'hr-folio-color-mode',
+    storageKey: 'nuxt-starter-color-mode',
   },
 
   i18n: {
@@ -52,7 +52,7 @@ export default defineNuxtConfig({
         iso: 'fr-FR'
       }
     ],
-    baseUrl: 'https://hrcd.fr',
+    baseUrl: 'https://nuxt-starter.fr',
     vueI18n: {
       legacy: false,
       locale: "en",
@@ -63,23 +63,4 @@ export default defineNuxtConfig({
   },
 
   plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
-
-  tailwindcss: {
-    cssPath: "~/assets/style/main.scss",
-    config: {
-      content: [
-        "./components/**/*.{js,vue,ts}",
-        "./layouts/**/*.vue",
-        "./pages/**/*.vue",
-        "./plugins/**/*.{js,ts}",
-        "./nuxt.config.{js,ts}",
-        "./app.vue",
-        "./error.vue",
-      ],
-      theme: {
-        extend: {},
-      },
-      plugins: [],
-    },
-  },
 });
