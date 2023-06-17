@@ -4,6 +4,7 @@ useHead({
   meta: [
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { name: "keywords", content: "Home" },
+    { name: "description", content: "Nuxt Starter" }
   ],
   link: [
     {
@@ -17,7 +18,9 @@ useHead({
 
 <template>
   <div>
-    <LayoutNavbar />
-    <NuxtPage />
+    <Html :lang="$i18n.locale">
+      <LayoutNavbar />
+      <NuxtPage />
+    </Html>
   </div>
 </template>
