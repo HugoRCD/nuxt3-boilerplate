@@ -11,9 +11,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: "var(--accent-color)",
-        "accent-color-hover": "var(--accent-color-hover)",
-        "accent-color-faded": "var(--accent-color-faded)",
+        main: "var(--main-color)",
+        muted: "var(--muted)",
+        inverted: "var(--inverted)",
+        "text-color": "var(--text-color)",
+        accent: "var(--accent)",
+        "accent-hover": "var(--accent-hover)",
+        "accent-faded": "var(--accent-faded)",
+      },
+      gradientColorStops: {
+        "accent-main": "var(--accent-main)",
+        "accent-secondary": "var(--accent-secondary)",
+      },
+      borderWidth: {
+        sm: "1px",
+        md: "2px",
       },
     },
   },

@@ -2,20 +2,7 @@
 const { t } = useI18n();
 const route = useRoute();
 
-const navigation = [
-  {
-    name: "Home",
-    to: "/",
-  },
-  {
-    name: "About",
-    to: "/about",
-  },
-  {
-    name: "Contact",
-    to: "/contact",
-  },
-];
+const navigation = getNavigation("home");
 </script>
 
 <template>
@@ -38,6 +25,8 @@ const navigation = [
       <div class="flex flex-1 justify-end items-center gap-x-4">
         <LanguageSelector />
         <ThemeSelector />
+        <LanguageToggle />
+        <ThemeToggle />
       </div>
     </nav>
   </header>

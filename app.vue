@@ -1,10 +1,11 @@
-<script setup lang="ts">
+<script lang="ts" setup>
+const { appName } = useAppConfig();
 useHead({
-  title: "Nuxt Starter",
+  title: appName,
   meta: [
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
-    { name: "keywords", content: "Home" },
-    { name: "description", content: "Nuxt Starter" }
+    {name: "viewport", content: "width=device-width, initial-scale=1"},
+    {name: "keywords", content: "Home"},
+    {name: "description", content: "Nuxt Starter"}
   ],
   link: [
     {
@@ -17,10 +18,11 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <Html :lang="$i18n.locale">
-      <LayoutNavbar />
-      <NuxtPage />
-    </Html>
-  </div>
+  <Html :lang="$i18n.locale">
+    <Body>
+      <NuxtLayout>
+        <NuxtPage/>
+      </NuxtLayout>
+    </Body>
+  </Html>
 </template>

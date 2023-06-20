@@ -5,3 +5,25 @@
 @import "animation";
 @import "themes/dark";
 @import "themes/light";
+
+#__nuxt, #__layout {
+  height:100%!important;
+  width: 100%!important;
+}
+
+@layer components {
+  .input {
+    @apply border-sm rounded-md;
+    @apply focus:outline-none;
+    @apply px-4 py-2;
+  }
+
+  .gradient {
+    @apply bg-gradient-to-bl from-accent-main to-accent-secondary;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-bl from-accent-main to-accent-secondary;
+  }
+}
