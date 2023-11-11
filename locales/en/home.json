@@ -4,5 +4,8 @@
     "part2": "This one is made with ❤",
     "subtitle": "Enjoy the power of Nuxt 3, NuxtUI coupled with TailwindCSS, Bun, Resend and other with just git clone !!!",
     "cta": "Get Started"
-  }
+  },
+  "test": "Test notifications",
+  "test_toast": "This is a notification",
+  "test_toast_description": "This is a description of the notification"
 }

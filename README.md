@@ -15,6 +15,11 @@ All the template has been made to be as simple as possible to use and to be easi
 - Dark and light theme switchable by the user
 - Fully responsive design using SCSS
 
+### SEO
+- SEO friendly with meta tags and Open Graph tags
+- Sitemap generation
+- Robots.txt generation
+
 ### Deployment
 - Include [Docker](https://www.docker.com/)  configuration using a Dockerfile and Docker-compose
 - Easily deploy the application in a container running on port 8080
@@ -24,7 +29,6 @@ All the template has been made to be as simple as possible to use and to be easi
 - Eslint is configure on the boilerplate (configure for Typescript, with Prettier)
 
 ## Console
-
 This application includes a powerful console that can be launched
 by using the shortcut `cmd + k`. This console can provide various
 features to facilitate development and management of the application but you
@@ -58,7 +62,6 @@ Now you can open the app in your browser at http://localhost:3000 if you do not 
 - [ ] Add Authentification (OAuth2, JWT, ...)
 - [ ] Add contact page
 - [ ] Add a blog page
-- [ ] Add toast notifications
 
 ## Built With
 

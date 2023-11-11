@@ -15,10 +15,29 @@ useHead({
     },
   ],
 });
+
+const toastStore = useToastStore();
+const toast = computed(() => {
+  return {
+    show: toastStore.getShow,
+    title: toastStore.getTitle,
+    message: toastStore.getMessage,
+    type: toastStore.getType,
+    infos: toastStore.getInfos,
+  };
+});
 </script>
 
 <template>
   <Html :lang="$i18n.locale">
+  <ToastsBasic
+    :show="toast.show"
+    :title="toast.title"
+    :description="toast.message"
+    :type="toast.type"
+    :infos="toast.infos"
+    @close="toastStore.closeToast()"
+  />
     <Body class="bg-white dark:bg-zinc-950">
       <NuxtLayout>
         <NuxtPage/>

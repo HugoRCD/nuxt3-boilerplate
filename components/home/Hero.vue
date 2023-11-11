@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+const toastStore = useToastStore();
 </script>
 
 <template>
@@ -24,5 +24,8 @@
     <button class="gradient z-10 text-white/90 font-semibold px-6 py-2 rounded-full mt-10 cursor-pointer hover:px-8 hover:shadow-lg transition-all duration-300 ease-in-out">
       {{ $t("home.hero.cta")}}
     </button>
+    <UButton class="z-10 mt-6" variant="soft" @click="toastStore.showSuccessToast({ title: 'home.test_toast', message: 'home.test_toast_description' })">
+      {{ $t("home.test")}}
+    </UButton>
   </div>
 </template>
