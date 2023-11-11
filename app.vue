@@ -57,6 +57,26 @@ useHead({
       property: "og:image",
       content: "https://nuxtstarter.hrcd.fr/homescreen.png",
     },
+    {
+      property: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      property: "twitter:image",
+      content: "https://nuxtstarter.hrcd.fr/homescreen.png",
+    },
+    {
+      property: "twitter:url",
+      content: "https://nuxtstarter.hrcd.fr/",
+    },
+    {
+      property: "twitter:title",
+      content: "Nuxt Starter - Start your next Nuxt project in seconds",
+    },
+    {
+      property: "twitter:description",
+      content: "Start your next Nuxt project in seconds, with everything you need included",
+    },
   ],
 });
 </script>
