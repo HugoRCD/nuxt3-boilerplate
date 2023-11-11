@@ -61,6 +61,7 @@ Now you can open the app in your browser at http://localhost:3000 if you do not 
 - [ ] Add some components
 - [ ] Add Authentification (OAuth2, JWT, ...)
 - [ ] Add a blog page
+- [ ] Add more og elements (twitter, facebook, ...)
 
 ## Built With
 
