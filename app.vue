@@ -3,9 +3,9 @@ const { appName } = useAppConfig();
 useHead({
   title: appName,
   meta: [
-    {name: "viewport", content: "width=device-width, initial-scale=1"},
-    {name: "keywords", content: "Home"},
-    {name: "description", content: "Nuxt Starter"}
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "keywords", content: "Home" },
+    { name: "description", content: "Nuxt Starter" },
   ],
   link: [
     {
@@ -26,21 +26,54 @@ const toast = computed(() => {
     infos: toastStore.getInfos,
   };
 });
+
+useHead({
+  title: "Nuxt Starter - Start your next Nuxt project in seconds",
+  meta: [
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "author", content: "Hugo Richard" },
+    { charset: "utf-8" },
+    {
+      name: "description",
+      content: "Start your next Nuxt project in seconds, with everything you need included",
+    },
+    {
+      name: "keywords",
+      content: "Nuxt, Starter, Resend, Bun, Tailwind, TypeScript, ESLint",
+    },
+    {
+      property: "og:title",
+      content: "Nuxt Starter - Start your next Nuxt project in seconds",
+    },
+    {
+      property: "og:url",
+      content: "https://nuxtstarter.hrcd.fr/",
+    },
+    {
+      property: "og:description",
+      content: "Start your next Nuxt project in seconds, with everything you need included",
+    },
+    {
+      property: "og:image",
+      content: "https://nuxtstarter.hrcd.fr/homescreen.png",
+    },
+  ],
+});
 </script>
 
 <template>
   <Html :lang="$i18n.locale">
-  <ToastsBasic
-    :show="toast.show"
-    :title="toast.title"
-    :description="toast.message"
-    :type="toast.type"
-    :infos="toast.infos"
-    @close="toastStore.closeToast()"
-  />
+    <ToastsBasic
+      :show="toast.show"
+      :title="toast.title"
+      :description="toast.message"
+      :type="toast.type"
+      :infos="toast.infos"
+      @close="toastStore.closeToast()"
+    />
     <Body class="bg-white dark:bg-zinc-950">
       <NuxtLayout>
-        <NuxtPage/>
+        <NuxtPage />
       </NuxtLayout>
     </Body>
   </Html>
