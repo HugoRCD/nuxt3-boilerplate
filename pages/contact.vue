@@ -1,5 +1,9 @@
 <script setup lang="ts">
-
+definePageMeta({
+  title: "Contact",
+  name: "Contact",
+  path: "/contact",
+});
 </script>
 
 <template>
