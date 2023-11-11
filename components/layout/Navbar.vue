@@ -1,33 +1,30 @@
 <script lang="ts" setup>
-const { t } = useI18n();
-const route = useRoute();
-
 const navigation = getNavigation("home");
 </script>
 
 <template>
-  <header class="backdrop-blur-lg bg-black-opacity/40 sticky top-0 z-50">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between py-3 px-4">
-      <div class="flex flex-1 items-center">
-        <div class="hidden lg:flex lg:gap-x-8">
+  <div class="flex items-center justify-center mx-auto w-full my-2">
+    <header class="rounded-full">
+      <div class="border border-white/10 rounded-full">
+        <nav class="z-10 h-[50px] sm:h-[45px] flex justify-around gap-2 sm:hover:gap-4 p-1 transition-all duration-300 ease-in-out">
           <NuxtLink
             v-for="item in navigation"
             :id="item.name.toLowerCase()"
             :key="item.name"
+            :aria-label="item.name + ' navigation link'"
+            :class="[
+              item.name === $route.name
+                ? 'text-white/75 shadow-white/50 shadow-2xl text-shadow-sm border border-white/5 backdrop-blur-3xl bg-zinc-900/10'
+                : 'text-muted',
+            ]"
             :to="item.to"
-            class="text-xs font-semibold leading-6 transition-colors duration-300 ease-in-out"
+            class="flex items-center rounded-full px-4 sm:px-6 py-1 border border-transparent hover:bg-zinc-900/50 hover:backdrop-blur-3xl hover:border-white/5 hover:text-main duration-300 ease-in-out transition-all"
           >
-            {{ $t("navigation." + item.name.toLowerCase()) }}
+            <component :is="item.icon" class="w-7 h-7 sm:w-6 sm:h-6 font-medium" />
+            <span class="hidden sm:inline-block ml-2 font-medium">{{ item.name }}</span>
           </NuxtLink>
-        </div>
+        </nav>
       </div>
-      <Logo :isText="true" :size="6" />
-      <div class="flex flex-1 justify-end items-center gap-x-4">
-        <LanguageSelector />
-        <ThemeSelector />
-        <LanguageToggle />
-        <ThemeToggle />
-      </div>
-    </nav>
-  </header>
+    </header>
+  </div>
 </template>

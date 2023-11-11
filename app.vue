@@ -19,7 +19,7 @@ useHead({
 
 <template>
   <Html :lang="$i18n.locale">
-    <Body>
+    <Body class="bg-white dark:bg-zinc-950">
       <NuxtLayout>
         <NuxtPage/>
       </NuxtLayout>

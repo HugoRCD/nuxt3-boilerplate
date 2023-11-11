@@ -1,5 +1,3 @@
-import messages from "./locales/messages";
-
 export default defineNuxtConfig({
   app: {
     layoutTransition: {
@@ -12,6 +10,10 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {
+    "/": { isr: true, prerender: true },
+  },
+
   css: ["~/assets/style/main.scss"],
 
   imports: {
@@ -20,14 +22,20 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    private: {
+      resendApiKey: process.env.RESEND_API_KEY,
+    },
+  },
+
   modules: [
     "nuxt-headlessui",
     "@vueuse/nuxt",
     "@nuxtjs/i18n",
     "@pinia/nuxt",
-    "nuxt-mailer",
     "@nuxthq/ui",
-    "@nuxtjs/robots"
+    "nuxt-svgo",
+    "@nuxt/image",
   ],
 
   colorMode: {
@@ -53,19 +61,23 @@ export default defineNuxtConfig({
         iso: 'fr-FR'
       }
     ],
-    baseUrl: 'https://nuxt-starter.fr',
-    vueI18n: {
-      legacy: false,
-      locale: "en",
-      fallbackLocale: "en",
-      availableLocales: ["en", "fr"],
-      messages: messages,
+    baseUrl: 'https://nuxt-starter.com',
+    vueI18n: "~/i18n.config.ts",
+  },
+
+  image: {
+    format: ["webp"],
+  },
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ["/sitemap.xml"],
     },
   },
 
-  robots: {
-    UserAgent: '*',
-    Disallow: ''
+  svgo: {
+    autoImportPath: "./assets/logo/",
   },
 
   plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],

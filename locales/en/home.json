@@ -1,3 +1,8 @@
 {
-  "hello_world": "Hello World"
+  "hero": {
+    "part1": "Not like other starters you've seen",
+    "part2": "This one is made with ❤",
+    "subtitle": "Enjoy the power of Nuxt 3, NuxtUI coupled with TailwindCSS, Bun, Resend and other with just git clone !!!",
+    "cta": "Get Started"
+  }
 }

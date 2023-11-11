@@ -1,7 +1,9 @@
 <template>
-  <div class="h-screen flex flex-col">
-    <LayoutNavbar class="h-[100px]" />
-    <slot />
-    <LayoutFooter class="h-[100px]" />
+  <div class="flex flex-col h-screen">
+    <LayoutNavbar />
+    <div class="flex-1">
+      <slot />
+    </div>
+    <LayoutFooter />
   </div>
 </template>
