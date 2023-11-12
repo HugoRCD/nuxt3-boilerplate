@@ -1,9 +1,10 @@
-// @ts-ignore
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
-import plugin from "tailwindcss/plugin";
-import svgToDataUri from "mini-svg-data-uri";
+import type { Config } from "tailwindcss";
 
-module.exports = {
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+import svgToDataUri from "mini-svg-data-uri";
+import plugin from "tailwindcss/plugin";
+
+export default {
   darkMode: "class",
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -36,7 +37,6 @@ module.exports = {
     },
   },
   plugins: [
-    //@ts-ignore
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
@@ -64,4 +64,4 @@ module.exports = {
       );
     }),
   ],
-};
+} satisfies Config;
