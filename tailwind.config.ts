@@ -1,6 +1,4 @@
 import type { Config } from "tailwindcss";
-
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 import svgToDataUri from "mini-svg-data-uri";
 import plugin from "tailwindcss/plugin";
 
@@ -47,7 +45,7 @@ export default {
           }),
         },
         {
-          values: flattenColorPalette(theme("backgroundColor")),
+          values: theme("backgroundColor"),
           type: ["color"],
         },
       );
