@@ -19,6 +19,7 @@ const toastStore = useToastStore();
     <h2 class="mt-4 max-w-xl mx-auto text-center text-lg font-light text-black/60 dark:text-white/60">
       {{ $t("home.hero.subtitle") }}
     </h2>
+    <HomeCircleSystem />
     <div class="flex gap-4 mt-6 z-10">
       <NuxtLink to="https://github.com/HugoRCD/nuxt3-boilerplate">
         <UButton>
