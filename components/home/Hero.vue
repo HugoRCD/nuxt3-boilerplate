@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const toastStore = useToastStore();
+const toast = useToast();
 </script>
 
 <template>
@@ -26,7 +27,10 @@ const toastStore = useToastStore();
           {{ $t("home.hero.cta") }}
         </UButton>
       </NuxtLink>
-      <UButton variant="soft" @click="toastStore.showSuccessToast({ title: 'home.test_toast', message: 'home.test_toast_description' })">
+      <UButton
+        variant="soft"
+        @click="toast.add({ title: $t('home.test_toast'), description: $t('home.test_toast_description'), timeout: 1500, icon: 'i-heroicons-check-circle' })"
+      >
         {{ $t("home.test") }}
       </UButton>
     </div>
